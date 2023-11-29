@@ -29,7 +29,6 @@ public class Main {
 
     var filteredLines = lines.stream().filter(wordFilter::filter).toList();
     var filteredChars = filteredLines.stream().collect(new StringListToCharListCollector());
-
     LineWriter.writeToFile(OUTPUT_PATH + outputFileName, filteredChars);
 
     logger.info("Words successfully filtered");
