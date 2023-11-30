@@ -5,8 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.io.*;
 import org.junit.Before;
 import org.junit.Rule;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.junit.rules.TemporaryFolder;
 
 @DisplayName("Test main class")
@@ -32,6 +31,10 @@ class MainTest {
       System.err.println(
           "Error creating temporary test file in " + this.getClass().getSimpleName());
     }
+  }
+  @AfterEach
+  public void cleanUp() {
+    folder.delete();
   }
 
   @Test
